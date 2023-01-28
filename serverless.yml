@@ -1,0 +1,14 @@
+service: unfollowTraitors
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+  profile: gonzalo-aws-personal-profile
+
+functions:
+  myFunction:
+    handler: handler
+    timeout: 600 # in seconds
+    events:
+      - schedule: rate(1 day) # run once a day
